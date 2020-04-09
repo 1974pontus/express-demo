@@ -26,7 +26,7 @@ const guitars = [
         year: 1962
     },
     {
-        id: 5,
+        id: 4,
         brand: "Mosrite",
         model: "Mark 1",
         pickups: "Smooth",
