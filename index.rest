@@ -1,0 +1,42 @@
+
+//get all the guitars
+GET http://localhost:3000/api/guitars
+
+
+###
+
+//get one guitar
+GET http://localhost:3000/api/guitars/1
+
+###
+
+//add new guitar
+POST http://localhost:3000/api/guitars
+Content-Type: application/json
+
+{
+    "id": 5,
+    "brand": "Gretch",
+    "model": "White falcon",
+    "pickups": "Tv Jones",
+    "color": "White",
+    "year": 1968
+}
+
+###
+PUT http://localhost:3000/api/guitars/5
+Content-Type: application/json
+
+{
+    "id": 5,
+    "brand": "Gretch",
+    "model": "White falcon",
+    "pickups": "Tv Jones",
+    "color": "White",
+    "year": 1968
+}
+
+
+### 
+
+DELETE http://localhost:3000/api/guitars/5
