@@ -1,39 +1,8 @@
 let cardContainer
 
-const guitars = [
-    {
-        id: 1,
-        brand: "Gibson",
-        model: "Les paul",
-        pickups: "Humbucker",
-        color: "Goldtop",
-        year: 1958
-    },
-    {
-        id: 2,
-        brand: "Gibson",
-        model: "Explorer",
-        pickups: "Humbucker",
-        color: "Corina",
-        year: 1976
-    },
-    {
-        id: 3,
-        brand: "Fender",
-        model: "Stratocaster",
-        pickups: "Single coil",
-        color: "Fiesta red",
-        year: 1962
-    },
-    {
-        id: 4,
-        brand: "Mosrite",
-        model: "Mark 1",
-        pickups: "Smooth",
-        color: "White Pearloid",
-        year: 1964
-    }
-]
+function createNewGuitar() {
+    const 
+}
 
 let createGuitarCard = (guitar) => {
 
@@ -74,7 +43,7 @@ let createGuitarCard = (guitar) => {
     cardContainer.appendChild(card);
   
   }
-  let initListOfGuitars = () => {
+  let initListOfGuitars = (guitars) => {
     if (cardContainer) {
       document.getElementById('card-container').replaceWith(cardContainer);
       return;
@@ -86,4 +55,30 @@ let createGuitarCard = (guitar) => {
     });
   };
 
-  initListOfGuitars();
+  
+
+
+ const myForm = document.getElementById('myForm')
+
+ myForm.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+
+    
+ })
+
+ fetch("http://localhost:3000/api/guitars", {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+      },
+    
+})
+.then((response) => response.json())
+.then((guitars) => {
+    console.log('success', guitars)
+    initListOfGuitars(guitars);
+})
+.catch((error) => {
+    console.error('Error', error)
+})
