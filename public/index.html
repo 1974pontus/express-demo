@@ -16,30 +16,30 @@
   <body>
         <h1>Add A vintage guitar to your wishlist</h1>
 
-        <form id="myForm" action = "http://localhost:3000/api/guitars" method="POST">
+        <form name="myForm" id="myForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="brand">Brand</label>
-                <input type="text" class="form-control" id="brand">
+                <input name="brand" type="text" class="form-control" id="brand">
               </div>
               <div class="form-group col-md-6">
                 <label for="model">Model</label>
-                <input type="text" class="form-control" id="model">
+                <input name="model" type="text" class="form-control" id="model">
               </div>
               <div class="form-group col-md-6">
                 <label for="pickups">Pickups</label>
-              <input type="text" class="form-control" id="pickups">
+              <input name="pickups" type="text" class="form-control" id="pickups">
               </div>
               <div class="form-group col-md-6">
                 <label for="color">Color</label>
-              <input type="text" class="form-control" id="color">
+              <input name="color" type="text" class="form-control" id="color">
               </div>
               <div class="form-group col-md-6">
                 <label for="year">Year</label>
-                <input type="text" class="form-control" id="year">
+                <input name="year" type="text" class="form-control" id="year">
               </div>
             </div>
-            <button type="submit"  class="btn btn-primary">Add to wishlist</button>
+            <button type="submit" value="Submit!" class="btn btn-primary">Add to wishlist</button>
           </form>
 
           <div id="card-container">

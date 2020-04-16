@@ -62,6 +62,7 @@ app.post('/api/guitars', (req, res) => {
         res.status(400).send('Guitars in vintage Wishlist must be older than that!')
         return
     }
+    console.log("body", req.body)
     guitars.push(req.body)
     res.status(201)
     res.send()
