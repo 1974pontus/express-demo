@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use(express.json())
 
-
+let idIndex = 5
 const guitars = [
     {
         id: 1,
@@ -40,12 +41,6 @@ const guitars = [
 ]
 
 
-//middleware
-app.use(express.json())
-app.use(express.static('public'))
-
-
-
 //routes
 app.get('/api/guitars', (req, res) => {
     res.json(guitars)
@@ -63,7 +58,8 @@ app.post('/api/guitars', (req, res) => {
         return
     }
     console.log("body", req.body)
-    guitars.push(req.body)
+    const guitar = { id: idIndex++, ...req.body}
+    guitars.push(guitar)
     res.status(201)
     res.send()
 })
@@ -91,5 +87,7 @@ app.delete('/api/guitars/:id', (req, res) => {
 })
 
 
+app.use(express.static('public'))
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}/api/guitars`))
+
+app.listen(port, () => console.log(`Server listening at http://localhost:${port}/api/guitars`))

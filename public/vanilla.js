@@ -77,13 +77,21 @@ getAllGuitars()
 
 function newGuitar() {
     let myForm = document.getElementById('myForm')
-    let formData = new FormData(myForm);
+    
     myForm.addEventListener('submit', function (e) {
         e.preventDefault()
+        let formData = new FormData(myForm);
+    
+        const guitar = {}
+        for (const pair of formData.entries()) {
+            const [key, value] = pair
+            guitar[key] = value
+        }
 
         fetch("http://localhost:3000/api/guitars", {
             method: "POST",
-            body: JSON.stringify(formData)
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(guitar)
         }).then((response) => {
             return response.json()
         }).then((result) => {
