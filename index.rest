@@ -15,7 +15,7 @@ POST http://localhost:3000/api/guitars HTTP/1.1
 Content-Type: application/json
 
 {
-    "brand": "Gretch",
+    "brand": "branson",
     "model": "White falcon",
     "pickups": "Tv Jones",
     "color": "White",
@@ -36,4 +36,4 @@ Content-Type: application/json
 
 ### 
 
-DELETE http://localhost:3000/api/guitars/6
+DELETE http://localhost:3000/api/guitars/5
