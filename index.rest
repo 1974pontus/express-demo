@@ -6,7 +6,7 @@ GET http://localhost:3000/api/guitars HTTP/1.1
 ###
 
 //get one guitar
-GET http://localhost:3000/api/guitars/3 HTTP/1.1
+GET http://localhost:3000/api/guitars/4 HTTP/1.1
 
 ###
 
