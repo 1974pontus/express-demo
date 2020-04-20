@@ -1,69 +1,41 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const fs = require('fs')
 
-
-
-const guitars = [
-    {
-        id: 1,
-        brand: "Gibson",
-        model: "Les paul",
-        pickups: "Humbucker",
-        color: "Goldtop",
-        year: 1958
-    },
-    {
-        id: 2,
-        brand: "Gibson",
-        model: "Explorer",
-        pickups: "Humbucker",
-        color: "Corina",
-        year: 1976
-    },
-    {
-        id: 3,
-        brand: "Fender",
-        model: "Stratocaster",
-        pickups: "Single coil",
-        color: "Fiesta red",
-        year: 1962
-    },
-    {
-        id: 4,
-        brand: "Mosrite",
-        model: "Mark 1",
-        pickups: "Smooth",
-        color: "White Pearloid",
-        year: 1964
-    }
-]
-
-
-//middleware
 app.use(express.json())
-app.use(express.static('public'))
+let data = fs.readFileSync('./guitars.json')
+let guitars = JSON.parse(data)
+
 
 
 
 //routes
 app.get('/api/guitars', (req, res) => {
-    res.json(guitars)
+    res.send(guitars)
 })
 
 app.get('/api/guitars/:id', (req, res) => {
+    // let data = fs.readFileSync('./guitars.json')
+    // let guitars = JSON.parse(data)
     const guitar = guitars.find(g => g.id === parseInt(req.params.id))
     if (!guitar) res.status(404).send('The guitar with the given ID was not found:(')
-    res.json(guitar)
+    res.send(JSON.stringify(guitar))
 })
 
 app.post('/api/guitars', (req, res) => {
+    let idIndex = 5
+    // let data = fs.readFileSync('./guitars.json')
+    // let guitars = JSON.parse(data)
     if (req.body.year > 1999) {
         res.status(400).send('Guitars in vintage Wishlist must be older than that!')
         return
     }
-    guitars.push(req.body)
+    console.log("body", req.body)
+    const guitar = { id: idIndex++, ...req.body}
+    guitars.push(guitar)
     res.status(201)
+    fs.writeFileSync('./guitars.json', JSON.stringify(guitars, null, 2));
     res.send()
 })
 
@@ -71,6 +43,8 @@ app.post('/api/guitars', (req, res) => {
 
 
 app.put('/api/guitars/:id', (req, res) => {
+    // let data = fs.readFileSync('./guitars.json')
+    // let guitars = JSON.parse(data)
     const guitar = guitars.find(g => g.id === parseInt(req.params.id))
     if (!guitar) res.status(404).send('The guitar with the given ID was not found:(')
     res.send()
@@ -80,15 +54,19 @@ app.put('/api/guitars/:id', (req, res) => {
 
 
 app.delete('/api/guitars/:id', (req, res) => {
+    // let data = fs.readFileSync('./guitars.json')
+    // let guitars = JSON.parse(data)
     const guitar = guitars.find(g => g.id === parseInt(req.params.id))
     if (!guitar) res.status(404).send('The guitar with the given ID was not found:(')
 
     const index = guitars.indexOf(guitar)
     guitars.splice(index, 1)
-
+    fs.writeFileSync('./guitars.json', JSON.stringify(guitars, null, 2));
     res.send(guitar)
 })
 
 
+app.use(express.static('public'))
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}/api/guitars`))
+
+app.listen(port, () => console.log(`Server listening at http://localhost:${port}/api/guitars`))
