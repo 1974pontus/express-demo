@@ -30,21 +30,5 @@
     "pickups": "Smooth",
     "color": "White Pearloid",
     "year": 1964
-  },
-  {
-    "id": 5,
-    "brand": "gibson",
-    "model": "335",
-    "pickups": "p 90",
-    "color": "tobacco",
-    "year": "1957"
-  },
-  {
-    "id": 5,
-    "brand": "fender",
-    "model": "telecaster deluxe",
-    "pickups": "original",
-    "color": "cream",
-    "year": "1969"
   }
 ]

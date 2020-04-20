@@ -15,7 +15,7 @@ POST http://localhost:3000/api/guitars HTTP/1.1
 Content-Type: application/json
 
 {
-    "brand": "branson",
+    "brand": "Gretch",
     "model": "White falcon",
     "pickups": "Tv Jones",
     "color": "White",
