@@ -1,6 +1,6 @@
 # express-demo
 
-Ett REST-API i NodeJS med express.js med en enklare hemsida för att lägga till objekt i en JSOn fil.
+Ett REST-API i NodeJS med express.js med en enklare hemsida för att lägga till objekt i en JSON fil.
 
 dev dependencies: express.js
                   nodemon
