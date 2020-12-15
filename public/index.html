@@ -9,45 +9,48 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="vanilla.js"></script>
     <title>Guitarlist</title>
   </head>
   <body>
-        <h1>Add A vintage guitar to your wishlist</h1>
+    <div class="heading">
+      <h1>Add A vintage guitar to your wishlist</h1>
+    </div>
 
-        <form name="myForm" id="myForm" onsubmit="setTimeout(function(){window.location.reload();},10);">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="brand">Brand</label>
-                <input name="brand" type="text" class="form-control" id="brand">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="model">Model</label>
-                <input name="model" type="text" class="form-control" id="model">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="pickups">Pickups</label>
-              <input name="pickups" type="text" class="form-control" id="pickups">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="color">Color</label>
-              <input name="color" type="text" class="form-control" id="color">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="year">Year</label>
-                <input name="year" type="text" class="form-control" id="year">
-              </div>
-            </div>
-            <button type="submit" value="Submit!" class="btn btn-primary">Add to wishlist</button>
-          </form>
+    <form
+      name="myForm"
+      id="myForm"
+      onsubmit="setTimeout(function(){window.location.reload();},10);"
+    >
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="brand">Brand</label>
+          <input name="brand" type="text" class="form-control" id="brand" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="model">Model</label>
+          <input name="model" type="text" class="form-control" id="model" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="pickups">Pickups</label>
+          <input name="pickups" type="text" class="form-control" id="pickups" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="color">Color</label>
+          <input name="color" type="text" class="form-control" id="color" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="year">Year</label>
+          <input name="year" type="text" class="form-control" id="year" />
+        </div>
+      </div>
+      <button type="submit" value="Submit!" class="btn btn-primary">
+        Add to wishlist
+      </button>
+    </form>
 
-          <div id="card-container">
-          </div>
-
-
-
-
+    <div id="card-container"></div>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

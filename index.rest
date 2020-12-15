@@ -15,11 +15,11 @@ POST http://localhost:3000/api/guitars HTTP/1.1
 Content-Type: application/json
 
 {
-    "brand": "Gretch",
-    "model": "White falcon",
-    "pickups": "Tv Jones",
-    "color": "White",
-    "year": 1968
+    "brand": "Kasuga",
+    "model": "LP type",
+    "pickups": "PAF",
+    "color": "Burgundy",
+    "year": 1989
 }
 
 ###
@@ -36,4 +36,4 @@ Content-Type: application/json
 
 ### 
 
-DELETE http://localhost:3000/api/guitars/5
+DELETE http://localhost:3000/api/guitars/2020-12-15T11:01:19.825Z
