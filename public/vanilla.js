@@ -1,7 +1,7 @@
 let cardContainer
 
 
-let createGuitarCard = (guitar) => {
+const createGuitarCard = (guitar) => {
 
     let card = document.createElement('div');
     card.className = 'card shadow cursor-pointer';
@@ -40,7 +40,7 @@ let createGuitarCard = (guitar) => {
     return card
 }
 
-let initListOfGuitars = (guitars) => {
+const initListOfGuitars = (guitars) => {
     if (cardContainer) {
         document.getElementById('card-container').replaceWith(cardContainer);
         return;
@@ -52,7 +52,6 @@ let initListOfGuitars = (guitars) => {
         cardContainer.appendChild(card);
     });
 };
-
 
 
 function getAllGuitars() {
@@ -73,7 +72,9 @@ function getAllGuitars() {
         })
 }
 
-getAllGuitars()
+document.addEventListener('DOMContentLoaded', function() {
+    getAllGuitars()
+}, false);
 
 function newGuitar() {
     let myForm = document.getElementById('myForm')
@@ -93,16 +94,16 @@ function newGuitar() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(guitar)
         }).then((response) => {
+            console.log(guitar)
             return response.json()
         }).then((result) => {
             console.log(result)
         }).catch((error) => {
             console.error('Error', error)
         })
+        location.reload()
     })
 }
 
-
 newGuitar()
-
 

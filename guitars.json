@@ -30,5 +30,21 @@
     "pickups": "Smooth",
     "color": "White Pearloid",
     "year": 1964
+  },
+  {
+    "id": "2020-12-16T06:49:06.438Z",
+    "brand": "Jackson",
+    "model": "soloist",
+    "pickups": "Dimarzio X2",
+    "color": "Snakeskin",
+    "year": "1986"
+  },
+  {
+    "id": "2020-12-16T06:54:13.436Z",
+    "brand": "hondo",
+    "model": "SG Type",
+    "pickups": "P-100",
+    "color": "Brown",
+    "year": "1978"
   }
 ]
