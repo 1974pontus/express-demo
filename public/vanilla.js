@@ -101,6 +101,7 @@ function newGuitar() {
         }).catch((error) => {
             console.error('Error', error)
         })
+        location.reload()
     })
 }
 
